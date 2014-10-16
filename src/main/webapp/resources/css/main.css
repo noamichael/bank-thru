@@ -17,6 +17,7 @@ body{
     width: 100%;
     display: none;
     font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    font-size: 12px;
 }
 #header{
     position: fixed;

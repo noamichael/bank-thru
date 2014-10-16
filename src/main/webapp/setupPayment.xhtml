@@ -9,12 +9,22 @@
     xmlns:p="http://primefaces.org/ui">
     <ui:define name="content">
         <div>
-            <p:panelGrid>
+            <p:panelGrid columns="2" styleClass="centered">
                 <p:outputLabel for="chooseAccount" value="Choose Account(s):"/>
-                <p:selectManyCheckbox id="chooseAccount" layout="grid" columns="3">
+                <p:selectManyCheckbox id="chooseAccount" layout="grid" columns="1">
                     <f:selectItems value="#{requestValues.accounts}" var="entry"
                                    itemLabel="##{entry.key}" itemValue="#{entry.key}"/>
                 </p:selectManyCheckbox>
+                
+                <p:outputLabel for="service" value="Service:"/>
+                <p:selectOneMenu id="service">
+                    <f:selectItem itemLabel="Amazon" itemValue="1"/>
+                    <f:selectItem itemLabel="Netflix" itemValue="2"/>
+                    <f:selectItem itemLabel="Team Alpha Software" itemValue="3"/>
+                </p:selectOneMenu>
+                
+                <p:outputLabel for="amount" value="Amount:"/>
+                <p:inputText id="amount"/>
             </p:panelGrid>
         </div>
     </ui:define>
