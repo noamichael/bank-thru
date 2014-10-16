@@ -16,6 +16,7 @@ body{
     margin: 0;
     width: 100%;
     display: none;
+    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 #header{
     position: fixed;
@@ -23,6 +24,7 @@ body{
     left: 0;
     right: 0;
     background: #990000;
+    height: 50px;
 }
 .content{
     display: flex;
@@ -45,15 +47,17 @@ body{
     margin: 0 auto;
     display: table;
     font-size: 7vw;
-    font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
     color: #0066ff;
 }
-@media screen and (max-width: 850px){
+.menu{
+    margin: 0 auto;
+}
+@media screen and (max-width: 961px){
     .ui-desktop{
         display: none !important;
     }
 }
-@media screen and (min-width: 849px){
+@media screen and (min-width: 962px){
     .ui-mobile{
         display: none !important;
     }

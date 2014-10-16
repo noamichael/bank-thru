@@ -8,7 +8,15 @@
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
     <ui:define name="content">
-        Dashboard
+        <div>
+            <p:panelGrid>
+                <p:outputLabel for="chooseAccount" value="Choose Account(s):"/>
+                <p:selectManyCheckbox id="chooseAccount" layout="grid" columns="3">
+                    <f:selectItems value="#{requestValues.accounts}" var="entry"
+                                   itemLabel="##{entry.key}" itemValue="#{entry.key}"/>
+                </p:selectManyCheckbox>
+            </p:panelGrid>
+        </div>
     </ui:define>
 </ui:composition>
 

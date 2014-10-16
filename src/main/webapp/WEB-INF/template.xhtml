@@ -6,19 +6,18 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title><ui:insert name="title">Title</ui:insert></title>
+        <title><ui:insert name="title">Bank-Thru</ui:insert></title>
         <link rel="stylesheet" href="resources/css/main.css"/>
         <script src="resources/js/main.js"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <ui:insert name="metadata"/>
     </h:head>
     <h:body>
         <div id="header">
             <ui:insert name="header">
                 <h:form>
                     <div class="menu ui-desktop">
-                        <ui:repeat var="item" value="#{requestValues.links}">
-                            <p:commandButton value="#{item.value}" action="#{item.getUrl()}" style="#{item.value == 'Logout' ? 'float:right;':''}"/>
-                        </ui:repeat>
+                        <p:tabMenu activeIndex="#{sessionValues.index}" model="#{requestValues.menu}" style="font-size: 12px"/>
                     </div>
                     <h:panelGroup styleClass="ui-mobile" id="menu-button">
                         <p:graphicImage value="resources/images/threelines.png" styleClass="ui-mobile-icon"/>
