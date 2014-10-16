@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    template="/WEB-INF/template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+    <ui:define name="content">
+        <div class="login-content">
+            <div class="logo">
+                Bank<span style="color: dimgray;">-</span>Thru
+            </div>
+            <p:panelGrid columns="1" styleClass="centered">
+                <f:facet name="header">
+                    Login
+                </f:facet>
+                <p:column>
+                    <p:inputText placeholder="Username" styleClass="centered"/>
+                </p:column>
+                <p:column>
+                    <p:password placeholder="Password" styleClass="centered"/>
+                </p:column>
+                <p:column>
+                    <p:commandButton value="Submit" action="dashboard" styleClass="centered"/>
+                </p:column>
+                <f:facet name="footer">
+                    <p:commandLink value="Forgot password" action="#"/> or <p:commandLink value="Need to sign up" action="#"/>?
+                </f:facet>
+            </p:panelGrid>
+        </div>
+    </ui:define>
+</ui:composition>
+
