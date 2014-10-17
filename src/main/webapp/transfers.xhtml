@@ -7,8 +7,28 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
-    <ui:define name="content">
+    <ui:define name="title">
         Transfers
+    </ui:define>
+    <ui:define name="content">
+        <div>
+            <p:panelGrid columns="2" styleClass="centered">
+                <p:outputLabel for="from" value="From Account:"/>
+                <p:selectOneMenu id="from">
+                    <f:selectItems value="#{requestValues.accounts}" var="acct"
+                                   itemLabel="##{acct.key}" itemValue="#{acct.value}"/>
+                </p:selectOneMenu>
+                <p:outputLabel for="to" value="To Account:"/>
+                <p:selectOneMenu id="to">
+                    <f:selectItems value="#{requestValues.accounts}" var="acct"
+                                   itemLabel="##{acct.key}" itemValue="#{acct.value}"/>
+                </p:selectOneMenu>
+                <p:outputLabel for="amount" value="Amount: "/>
+                <p:inputText id="amount"/>
+                <p:outputLabel for="when" value="Date of Transfer"/>
+                <p:calendar id="when" mindate="#{requestValues.today}"/>
+            </p:panelGrid>
+        </div>
     </ui:define>
 </ui:composition>
 

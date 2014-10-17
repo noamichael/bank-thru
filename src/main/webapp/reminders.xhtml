@@ -7,8 +7,23 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
+    <ui:define name="title">
+        Reminders
+    </ui:define>
     <ui:define name="content">
-        reminders
+        <p:panelGrid columns="2">
+            <p:outputLabel for="type" value="Type:"/>
+            <p:selectOneMenu id="type">
+                <f:selectItem itemLabel="Email" itemValue="email"/>
+                <f:selectItem itemLabel="Text" itemValue="Text"/>
+                <f:selectItem itemLabel="Alarm" itemValue="Alarm"/>
+            </p:selectOneMenu>
+            <p:outputLabel for="when" value="When:"/>
+            <p:calendar id="when" pattern="MM/dd/yyyy HH:mm:ss"/>
+            <f:facet name="footer">
+                <p:schedule style="width: 300px" showHeader="false"/>
+            </f:facet>
+        </p:panelGrid>
     </ui:define>
 </ui:composition>
 

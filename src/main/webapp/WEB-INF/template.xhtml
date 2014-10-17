@@ -20,11 +20,21 @@
                         <p:tabMenu activeIndex="#{sessionValues.index}" model="#{requestValues.menu}" style="font-size: 12px"/>
                     </div>
                     <h:panelGroup styleClass="ui-mobile" id="menu-button">
-                        <p:graphicImage value="resources/images/threelines.png" styleClass="ui-mobile-icon"/>
+                        <p:graphicImage value="resources/images/threelines.png" styleClass="ui-mobile-icon" onclick="toggleMenu();"/>
                     </h:panelGroup>
-                    <p:menu model="#{requestValues.menu}" overlay="true" trigger="menu-button" my="left top" at="left bottom" styleClass="ui-mobile"/>
                 </h:form>
             </ui:insert>
+        </div>
+        <div class="slide-menu ui-mobile">
+            <h:form>
+                <ui:repeat value="#{requestValues.links}" var="link">
+                    <div class="slide-menu-item-container">
+                        <p:link outcome="#{link.getUrl()}" styleClass="slide-menu-item">
+                            #{link.value}
+                        </p:link>
+                    </div>
+                </ui:repeat>
+            </h:form>
         </div>
         <div class="content">
             <ui:insert name="content"/>

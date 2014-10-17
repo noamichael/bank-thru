@@ -8,11 +8,11 @@
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
     <ui:define name="content">
-        <p:panel header=" " style="flex-order: 1;">
-            <p:chart type="bar" model="#{requestValues.monthlySpending}"/>
+        <p:panel header=" ">
+            <p:chart type="bar" style="width: 300px" model="#{requestValues.monthlySpending}"/>
         </p:panel>
-        <p:panel header=" " style="flex-order: 2;">
-            <p:chart type="bar" model="#{requestValues.monthlySpending}"/>
+        <p:panel header=" ">
+            <p:chart type="pie" style="width: 300px" model="#{requestValues.spendingAreas}"/>
         </p:panel>
     </ui:define>
 </ui:composition>
