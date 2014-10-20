@@ -7,6 +7,15 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionValues.setIndex(1)}"/>
+    </f:metadata>
+    <ui:define name="title">
+        Setup Payment
+    </ui:define>
+    <ui:define name="page-header">
+        Setup Payment
+    </ui:define>
     <ui:define name="content">
         <div>
             <p:panelGrid columns="2" styleClass="centered">
@@ -15,14 +24,14 @@
                     <f:selectItems value="#{requestValues.accounts}" var="entry"
                                    itemLabel="##{entry.key}" itemValue="#{entry.key}"/>
                 </p:selectManyCheckbox>
-                
+
                 <p:outputLabel for="service" value="Service:"/>
                 <p:selectOneMenu id="service">
                     <f:selectItem itemLabel="Amazon" itemValue="1"/>
                     <f:selectItem itemLabel="Netflix" itemValue="2"/>
                     <f:selectItem itemLabel="Team Alpha Software" itemValue="3"/>
                 </p:selectOneMenu>
-                
+
                 <p:outputLabel for="amount" value="Amount:"/>
                 <p:inputText id="amount"/>
             </p:panelGrid>

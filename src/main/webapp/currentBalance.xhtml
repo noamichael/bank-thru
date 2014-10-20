@@ -7,12 +7,21 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionValues.setIndex(2)}"/>
+    </f:metadata>
     <ui:define name="metadata">
         <style>
             .ui-accordion .ui-accordion-content{
                 background: #ffff99;
             }
         </style>
+    </ui:define>
+    <ui:define name="title">
+        Current Balance
+    </ui:define>
+    <ui:define name="page-header">
+        Current Balance
     </ui:define>
     <ui:define name="content">
         <div>

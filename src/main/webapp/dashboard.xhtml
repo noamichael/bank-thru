@@ -7,6 +7,15 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionValues.setIndex(0)}"/>
+    </f:metadata>
+    <ui:define name="title">
+        Dashboard
+    </ui:define>
+    <ui:define name="page-header">
+        Dashboard
+    </ui:define>
     <ui:define name="content">
         Dashboard
     </ui:define>

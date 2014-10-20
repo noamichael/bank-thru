@@ -7,7 +7,13 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionValues.setIndex(6)}"/>
+    </f:metadata>
     <ui:define name="title">
+        Transfers
+    </ui:define>
+    <ui:define name="page-header">
         Transfers
     </ui:define>
     <ui:define name="content">

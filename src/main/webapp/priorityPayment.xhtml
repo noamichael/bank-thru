@@ -7,6 +7,12 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionValues.setIndex(3)}"/>
+    </f:metadata>
+    <ui:define name="page-header">
+        Priority Payment
+    </ui:define>
     <ui:define name="content">
         Priority Payment
     </ui:define>

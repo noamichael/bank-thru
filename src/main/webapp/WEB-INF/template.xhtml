@@ -14,7 +14,7 @@
     </h:head>
     <h:body>
         <div id="header">
-            <ui:insert name="header">
+            <ui:insert name="menu">
                 <h:form>
                     <div class="menu ui-desktop">
                         <p:tabMenu activeIndex="#{sessionValues.index}" model="#{requestValues.menu}" style="font-size: 12px"/>
@@ -35,6 +35,9 @@
                     </div>
                 </ui:repeat>
             </h:form>
+        </div>
+        <div class="page-header">
+            <ui:insert name="page-header"/>
         </div>
         <div class="content">
             <ui:insert name="content"/>

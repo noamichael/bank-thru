@@ -29,35 +29,27 @@ public class RequestValues {
 
     static {
         DefaultMenuItem dashboard = new DefaultMenuItem("Dashboard");
-        dashboard.setCommand("#{sessionValues.setIndex(0)}");
         dashboard.setUrl("dashboard.xhtml");
 
         DefaultMenuItem setupPayment = new DefaultMenuItem("Setup Payment");
-        setupPayment.setCommand("#{sessionValues.setIndex(1)}");
         setupPayment.setUrl("setupPayment.xhtml");
 
         DefaultMenuItem currentBalance = new DefaultMenuItem("Current Balance");
-        currentBalance.setCommand("#{sessionValues.setIndex(2)}");
         currentBalance.setUrl("currentBalance.xhtml");
 
         DefaultMenuItem priorityPayment = new DefaultMenuItem("Priority Payment");
-        priorityPayment.setCommand("#{sessionValues.setIndex(3)}");
         priorityPayment.setUrl("priorityPayment.xhtml");
 
         DefaultMenuItem reminders = new DefaultMenuItem("Reminders");
-        reminders.setCommand("#{sessionValues.setIndex(4)}");
         reminders.setUrl("reminders.xhtml");
 
         DefaultMenuItem spendingPattern = new DefaultMenuItem("Spending Pattern");
-        spendingPattern.setCommand("#{sessionValues.setIndex(5)}");
         spendingPattern.setUrl("spendingPattern.xhtml");
 
         DefaultMenuItem transfers = new DefaultMenuItem("Transfers");
-        transfers.setCommand("#{sessionValues.setIndex(6)}");
         transfers.setUrl("transfers.xhtml");
 
         DefaultMenuItem logout = new DefaultMenuItem("Logout");
-        logout.setCommand("logout");
         logout.setUrl("index.xhtml");
 
         defaultMenuModel.addElement(dashboard);
@@ -73,7 +65,7 @@ public class RequestValues {
         links.add(currentBalance);
         links.add(priorityPayment);
         links.add(reminders);
-        links.add(setupPayment);
+        links.add(spendingPattern);
         links.add(transfers);
         links.add(logout);
         accounts.add(new Entry("0000001928", "$12,003.19"));
