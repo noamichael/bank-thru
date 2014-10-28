@@ -8,7 +8,7 @@
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
     <f:metadata>
-        <f:event type="preRenderView" listener="#{sessionValues.setIndex(1)}"/>
+        <f:event type="preRenderView" listener="#{sessionValues.setIndex(0)}"/>
     </f:metadata>
     <ui:define name="title">
         Setup Payment
@@ -19,21 +19,36 @@
     <ui:define name="content">
         <div>
             <p:panelGrid columns="2" styleClass="centered">
-                <p:outputLabel for="chooseAccount" value="Choose Account(s):"/>
-                <p:selectManyCheckbox id="chooseAccount" layout="grid" columns="1">
-                    <f:selectItems value="#{requestValues.accounts}" var="entry"
-                                   itemLabel="##{entry.key}" itemValue="#{entry.key}"/>
-                </p:selectManyCheckbox>
-
-                <p:outputLabel for="service" value="Service:"/>
-                <p:selectOneMenu id="service">
-                    <f:selectItem itemLabel="Amazon" itemValue="1"/>
-                    <f:selectItem itemLabel="Netflix" itemValue="2"/>
-                    <f:selectItem itemLabel="Team Alpha Software" itemValue="3"/>
-                </p:selectOneMenu>
-
-                <p:outputLabel for="amount" value="Amount:"/>
-                <p:inputText id="amount"/>
+                <p:row>
+                    <p:column>
+                        <h:panelGrid columns="2">
+                            <f:facet name="header">
+                                Payment Details
+                            </f:facet>
+                            <p:outputLabel for="service" value=" Service: "/>
+                            <p:selectOneMenu id="service">
+                                <f:selectItem itemLabel="Amazon" itemValue="1"/>
+                                <f:selectItem itemLabel="Netflix" itemValue="2"/>
+                                <f:selectItem itemLabel="Team Alpha Software" itemValue="3"/>
+                            </p:selectOneMenu>
+                            <p:outputLabel value=" Total Payment Amount: "/>
+                            <h:panelGroup>
+                                <span>$&nbsp;</span>
+                                <p:inputText size="4"/>
+                            </h:panelGroup>
+                        </h:panelGrid>
+                        <p:dataTable var="entry" 
+                                     style="width: 300px;"
+                                     value="#{requestValues.accounts}">
+                            <p:column headerText="Account" style="width: 15px;">
+                                ##{entry.key}
+                            </p:column>
+                            <p:column headerText="Amount Toward Payment" style="width: 10px;">
+                                <span>$&nbsp;</span><p:inputText size="4"/>
+                            </p:column>
+                        </p:dataTable>
+                    </p:column>
+                </p:row>
             </p:panelGrid>
         </div>
     </ui:define>

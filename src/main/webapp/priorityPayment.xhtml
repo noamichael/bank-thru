@@ -8,13 +8,34 @@
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
     <f:metadata>
-        <f:event type="preRenderView" listener="#{sessionValues.setIndex(3)}"/>
+        <f:event type="preRenderView" listener="#{sessionValues.setIndex(2)}"/>
     </f:metadata>
     <ui:define name="page-header">
         Priority Payment
     </ui:define>
     <ui:define name="content">
-        Priority Payment
+        <h:form>
+            <p:dataTable value="#{sessionValues.payments}"
+                         var="payment"
+                         id="table"   
+                         rowIndexVar="index"
+                         rowKey="#{payment.value}"
+                         draggableRows="true">
+                <f:facet name="header">
+                    Payments
+                </f:facet>
+                <p:ajax event="rowReorder"
+                        update="table"
+                        listener="#{sessionValues.onPaymentDrop}"/>
+                <p:column>
+                    <p:panel header="#{index+1}" styleClass="list-item-#{index+1}">
+                        <div style="padding: 15px">
+                            #{payment.key}
+                        </div>
+                    </p:panel>
+                </p:column>
+            </p:dataTable>
+        </h:form>
     </ui:define>
 </ui:composition>
 

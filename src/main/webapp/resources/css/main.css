@@ -5,6 +5,21 @@
 a{
     text-decoration: none;
 }
+.list-item-1{
+    background: #ffff00;
+}
+.list-item-2{
+    background: #ffff66;
+}
+.list-item-3{
+    background: #ffff99;
+}
+.list-item-4{
+    background: #ffffcc;
+}
+.list-item-5{
+    background: #ffffff;
+}
 .ui-corner-all{
     border-radius: 0px
 }

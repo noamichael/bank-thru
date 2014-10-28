@@ -28,9 +28,6 @@ public class RequestValues {
     private static final PieChartModel pieChart = new PieChartModel();
 
     static {
-        DefaultMenuItem dashboard = new DefaultMenuItem("Dashboard");
-        dashboard.setUrl("dashboard.xhtml");
-
         DefaultMenuItem setupPayment = new DefaultMenuItem("Setup Payment");
         setupPayment.setUrl("setupPayment.xhtml");
 
@@ -52,7 +49,6 @@ public class RequestValues {
         DefaultMenuItem logout = new DefaultMenuItem("Logout");
         logout.setUrl("index.xhtml");
 
-        defaultMenuModel.addElement(dashboard);
         defaultMenuModel.addElement(setupPayment);
         defaultMenuModel.addElement(currentBalance);
         defaultMenuModel.addElement(priorityPayment);
@@ -60,7 +56,6 @@ public class RequestValues {
         defaultMenuModel.addElement(spendingPattern);
         defaultMenuModel.addElement(transfers);
         defaultMenuModel.addElement(logout);
-        links.add(dashboard);
         links.add(setupPayment);
         links.add(currentBalance);
         links.add(priorityPayment);
@@ -99,7 +94,7 @@ public class RequestValues {
         pieChart.setDiameter(130);
 
     }
-    
+
     public Date getToday(){
         return new Date();
     }

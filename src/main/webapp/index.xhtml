@@ -7,7 +7,12 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
-    <ui:define name="header"/>
+    <f:metadata>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionValues.setIndex(-1)}"/>
+    </f:metadata>
+    </f:metadata>
+    <ui:define name="menu"/>
     <ui:define name="content">
         <div class="login-content">
             <div class="logo">
@@ -24,7 +29,7 @@
                     <p:password placeholder="Password" styleClass="centered"/>
                 </p:column>
                 <p:column>
-                    <p:commandButton value="Submit" action="dashboard" styleClass="centered"/>
+                    <p:commandButton value="Submit" action="setupPayment" styleClass="centered"/>
                 </p:column>
                 <f:facet name="footer">
                     <p:commandLink value="Forgot password" action="#"/> or <p:commandLink value="Need to sign up" action="#"/>?
